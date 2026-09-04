@@ -1,0 +1,24 @@
+package br.com.senac.chatbot_hamburgueria;
+
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+
+@Configuration
+public class ChatConfiguration {
+
+    @Bean
+    ChatClient chatClient(
+            ChatClient.Builder builder,
+            @Value("classpath:/prompts/system-prompt-hamburgueria.st") Resource systemPrompt, CardapioTools cardapioTools
+            ){
+
+        return builder
+                .defaultSystem(systemPrompt)
+                .defaultTools(cardapioTools)
+                .build();
+    }
+
+}
