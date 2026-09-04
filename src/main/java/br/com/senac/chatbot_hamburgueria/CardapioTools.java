@@ -20,7 +20,7 @@ public class CardapioTools {
     private static final Logger log = LoggerFactory.getLogger(CardapioTools.class);
 
 
-
+    //
     @Tool(description = """
             Consulta o cardápio completo e atual da Hamburgueria do Zé.
             Retorna nome, descrição, preço e categoria de cada item.
